@@ -1,0 +1,816 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D81F652224CAF86B007BA92B /* TripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81F652124CAF86B007BA92B /* TripView.swift */; };
+		D81F652424CAFE8D007BA92B /* TrainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81F652324CAFE8D007BA92B /* TrainView.swift */; };
+		D81F652624CAFFF6007BA92B /* Train.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81F652524CAFFF6007BA92B /* Train.swift */; };
+		D81F652824CB0057007BA92B /* ExpectedTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81F652724CB0057007BA92B /* ExpectedTime.swift */; };
+		D81F652A24CB0134007BA92B /* TripJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81F652924CB0134007BA92B /* TripJSON.swift */; };
+		D82469CD24C85241009B735C /* ToynbeeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82469CC24C85241009B735C /* ToynbeeApp.swift */; };
+		D82469CF24C85241009B735C /* TripListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82469CE24C85241009B735C /* TripListView.swift */; };
+		D82469D124C85242009B735C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D82469D024C85242009B735C /* Assets.xcassets */; };
+		D82469D424C85242009B735C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D82469D324C85242009B735C /* Preview Assets.xcassets */; };
+		D82469DF24C85242009B735C /* ToynbeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82469DE24C85242009B735C /* ToynbeeTests.swift */; };
+		D82469EA24C85242009B735C /* ToynbeeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82469E924C85242009B735C /* ToynbeeUITests.swift */; };
+		D867ED3E24CEDE4400A5B0A1 /* StopListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D867ED3D24CEDE4400A5B0A1 /* StopListView.swift */; };
+		D89BAB8124CC44AF008ED0D1 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89BAB8024CC44AF008ED0D1 /* Stop.swift */; };
+		D8A572F724C9AB0300809FCE /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A572F624C9AB0300809FCE /* API.swift */; };
+		D8A572F924C9BE5D00809FCE /* ToynbeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A572F824C9BE5D00809FCE /* ToynbeeModel.swift */; };
+		D8A572FB24C9C19700809FCE /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A572FA24C9C19700809FCE /* Trip.swift */; };
+		D8A572FD24C9C3FE00809FCE /* Lookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A572FC24C9C3FE00809FCE /* Lookup.swift */; };
+		D8B128E424CC4F0C00A5F9AC /* StopSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B128E324CC4F0C00A5F9AC /* StopSelectionView.swift */; };
+		D8B128E624CC4FAA00A5F9AC /* ToynbeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B128E524CC4FAA00A5F9AC /* ToynbeeView.swift */; };
+		D8B128E824CC588400A5F9AC /* StopsByID.json in Resources */ = {isa = PBXBuildFile; fileRef = D8B128E724CC588400A5F9AC /* StopsByID.json */; };
+		D8B128F024CC59EE00A5F9AC /* ToynbeeUtilitiesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B128EF24CC59EE00A5F9AC /* ToynbeeUtilitiesApp.swift */; };
+		D8B128F224CC59EE00A5F9AC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B128F124CC59EE00A5F9AC /* ContentView.swift */; };
+		D8B128F424CC59F000A5F9AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8B128F324CC59F000A5F9AC /* Assets.xcassets */; };
+		D8B128F724CC59F000A5F9AC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8B128F624CC59F000A5F9AC /* Preview Assets.xcassets */; };
+		D8B128FD24CC5A0200A5F9AC /* google_rail in Resources */ = {isa = PBXBuildFile; fileRef = D89BAB8224CC4572008ED0D1 /* google_rail */; };
+		D8B128FF24CC5F6200A5F9AC /* RideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B128FE24CC5F6200A5F9AC /* RideView.swift */; };
+		D8B1290124CC866C00A5F9AC /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B1290024CC866C00A5F9AC /* View+Extensions.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D82469DB24C85242009B735C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D82469C124C85241009B735C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D82469C824C85241009B735C;
+			remoteInfo = Toynbee;
+		};
+		D82469E624C85242009B735C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D82469C124C85241009B735C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D82469C824C85241009B735C;
+			remoteInfo = Toynbee;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D81F652124CAF86B007BA92B /* TripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripView.swift; sourceTree = "<group>"; };
+		D81F652324CAFE8D007BA92B /* TrainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainView.swift; sourceTree = "<group>"; };
+		D81F652524CAFFF6007BA92B /* Train.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Train.swift; sourceTree = "<group>"; };
+		D81F652724CB0057007BA92B /* ExpectedTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpectedTime.swift; sourceTree = "<group>"; };
+		D81F652924CB0134007BA92B /* TripJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripJSON.swift; sourceTree = "<group>"; };
+		D82469C924C85241009B735C /* Toynbee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Toynbee.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D82469CC24C85241009B735C /* ToynbeeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToynbeeApp.swift; sourceTree = "<group>"; };
+		D82469CE24C85241009B735C /* TripListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListView.swift; sourceTree = "<group>"; };
+		D82469D024C85242009B735C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D82469D324C85242009B735C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D82469D524C85242009B735C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D82469DA24C85242009B735C /* ToynbeeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToynbeeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D82469DE24C85242009B735C /* ToynbeeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToynbeeTests.swift; sourceTree = "<group>"; };
+		D82469E024C85242009B735C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D82469E524C85242009B735C /* ToynbeeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToynbeeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D82469E924C85242009B735C /* ToynbeeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToynbeeUITests.swift; sourceTree = "<group>"; };
+		D82469EB24C85242009B735C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D867ED3D24CEDE4400A5B0A1 /* StopListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopListView.swift; sourceTree = "<group>"; };
+		D89BAB8024CC44AF008ED0D1 /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
+		D89BAB8224CC4572008ED0D1 /* google_rail */ = {isa = PBXFileReference; lastKnownFileType = folder; path = google_rail; sourceTree = "<group>"; };
+		D8A572F624C9AB0300809FCE /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		D8A572F824C9BE5D00809FCE /* ToynbeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToynbeeModel.swift; sourceTree = "<group>"; };
+		D8A572FA24C9C19700809FCE /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		D8A572FC24C9C3FE00809FCE /* Lookup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lookup.swift; sourceTree = "<group>"; };
+		D8B128E324CC4F0C00A5F9AC /* StopSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopSelectionView.swift; sourceTree = "<group>"; };
+		D8B128E524CC4FAA00A5F9AC /* ToynbeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToynbeeView.swift; sourceTree = "<group>"; };
+		D8B128E724CC588400A5F9AC /* StopsByID.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StopsByID.json; sourceTree = "<group>"; };
+		D8B128ED24CC59EE00A5F9AC /* ToynbeeUtilities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToynbeeUtilities.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8B128EF24CC59EE00A5F9AC /* ToynbeeUtilitiesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToynbeeUtilitiesApp.swift; sourceTree = "<group>"; };
+		D8B128F124CC59EE00A5F9AC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D8B128F324CC59F000A5F9AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D8B128F624CC59F000A5F9AC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D8B128F824CC59F000A5F9AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8B128F924CC59F000A5F9AC /* ToynbeeUtilities.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ToynbeeUtilities.entitlements; sourceTree = "<group>"; };
+		D8B128FE24CC5F6200A5F9AC /* RideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideView.swift; sourceTree = "<group>"; };
+		D8B1290024CC866C00A5F9AC /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D82469C624C85241009B735C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D82469D724C85242009B735C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D82469E224C85242009B735C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8B128EA24CC59EE00A5F9AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D82469C024C85241009B735C = {
+			isa = PBXGroup;
+			children = (
+				D82469CB24C85241009B735C /* Toynbee */,
+				D82469DD24C85242009B735C /* ToynbeeTests */,
+				D82469E824C85242009B735C /* ToynbeeUITests */,
+				D8B128EE24CC59EE00A5F9AC /* ToynbeeUtilities */,
+				D82469CA24C85241009B735C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D82469CA24C85241009B735C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D82469C924C85241009B735C /* Toynbee.app */,
+				D82469DA24C85242009B735C /* ToynbeeTests.xctest */,
+				D82469E524C85242009B735C /* ToynbeeUITests.xctest */,
+				D8B128ED24CC59EE00A5F9AC /* ToynbeeUtilities.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D82469CB24C85241009B735C /* Toynbee */ = {
+			isa = PBXGroup;
+			children = (
+				D82469CC24C85241009B735C /* ToynbeeApp.swift */,
+				D82469D024C85242009B735C /* Assets.xcassets */,
+				D8B1290224CC95D600A5F9AC /* Model */,
+				D8B1290524CC96AD00A5F9AC /* Views */,
+				D8B1290424CC95FB00A5F9AC /* Extensions */,
+				D82469D524C85242009B735C /* Info.plist */,
+				D82469D224C85242009B735C /* Preview Content */,
+			);
+			path = Toynbee;
+			sourceTree = "<group>";
+		};
+		D82469D224C85242009B735C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D82469D324C85242009B735C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D82469DD24C85242009B735C /* ToynbeeTests */ = {
+			isa = PBXGroup;
+			children = (
+				D82469DE24C85242009B735C /* ToynbeeTests.swift */,
+				D82469E024C85242009B735C /* Info.plist */,
+			);
+			path = ToynbeeTests;
+			sourceTree = "<group>";
+		};
+		D82469E824C85242009B735C /* ToynbeeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D82469E924C85242009B735C /* ToynbeeUITests.swift */,
+				D82469EB24C85242009B735C /* Info.plist */,
+			);
+			path = ToynbeeUITests;
+			sourceTree = "<group>";
+		};
+		D8B128EE24CC59EE00A5F9AC /* ToynbeeUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				D89BAB8224CC4572008ED0D1 /* google_rail */,
+				D8B128EF24CC59EE00A5F9AC /* ToynbeeUtilitiesApp.swift */,
+				D8B128F124CC59EE00A5F9AC /* ContentView.swift */,
+				D8B128F324CC59F000A5F9AC /* Assets.xcassets */,
+				D8B128F824CC59F000A5F9AC /* Info.plist */,
+				D8B128F924CC59F000A5F9AC /* ToynbeeUtilities.entitlements */,
+				D8B128F524CC59F000A5F9AC /* Preview Content */,
+			);
+			path = ToynbeeUtilities;
+			sourceTree = "<group>";
+		};
+		D8B128F524CC59F000A5F9AC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D8B128F624CC59F000A5F9AC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D8B1290224CC95D600A5F9AC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D8A572F824C9BE5D00809FCE /* ToynbeeModel.swift */,
+				D8A572F624C9AB0300809FCE /* API.swift */,
+				D8A572FC24C9C3FE00809FCE /* Lookup.swift */,
+				D89BAB8024CC44AF008ED0D1 /* Stop.swift */,
+				D8A572FA24C9C19700809FCE /* Trip.swift */,
+				D81F652924CB0134007BA92B /* TripJSON.swift */,
+				D81F652524CAFFF6007BA92B /* Train.swift */,
+				D81F652724CB0057007BA92B /* ExpectedTime.swift */,
+				D8B128E724CC588400A5F9AC /* StopsByID.json */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D8B1290424CC95FB00A5F9AC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D8B1290024CC866C00A5F9AC /* View+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D8B1290524CC96AD00A5F9AC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D8B128E524CC4FAA00A5F9AC /* ToynbeeView.swift */,
+				D8B128E324CC4F0C00A5F9AC /* StopSelectionView.swift */,
+				D867ED3D24CEDE4400A5B0A1 /* StopListView.swift */,
+				D82469CE24C85241009B735C /* TripListView.swift */,
+				D81F652124CAF86B007BA92B /* TripView.swift */,
+				D81F652324CAFE8D007BA92B /* TrainView.swift */,
+				D8B128FE24CC5F6200A5F9AC /* RideView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D82469C824C85241009B735C /* Toynbee */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D82469EE24C85242009B735C /* Build configuration list for PBXNativeTarget "Toynbee" */;
+			buildPhases = (
+				D82469C524C85241009B735C /* Sources */,
+				D82469C624C85241009B735C /* Frameworks */,
+				D82469C724C85241009B735C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Toynbee;
+			productName = Toynbee;
+			productReference = D82469C924C85241009B735C /* Toynbee.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D82469D924C85242009B735C /* ToynbeeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D82469F124C85242009B735C /* Build configuration list for PBXNativeTarget "ToynbeeTests" */;
+			buildPhases = (
+				D82469D624C85242009B735C /* Sources */,
+				D82469D724C85242009B735C /* Frameworks */,
+				D82469D824C85242009B735C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D82469DC24C85242009B735C /* PBXTargetDependency */,
+			);
+			name = ToynbeeTests;
+			productName = ToynbeeTests;
+			productReference = D82469DA24C85242009B735C /* ToynbeeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D82469E424C85242009B735C /* ToynbeeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D82469F424C85242009B735C /* Build configuration list for PBXNativeTarget "ToynbeeUITests" */;
+			buildPhases = (
+				D82469E124C85242009B735C /* Sources */,
+				D82469E224C85242009B735C /* Frameworks */,
+				D82469E324C85242009B735C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D82469E724C85242009B735C /* PBXTargetDependency */,
+			);
+			name = ToynbeeUITests;
+			productName = ToynbeeUITests;
+			productReference = D82469E524C85242009B735C /* ToynbeeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		D8B128EC24CC59EE00A5F9AC /* ToynbeeUtilities */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8B128FA24CC59F000A5F9AC /* Build configuration list for PBXNativeTarget "ToynbeeUtilities" */;
+			buildPhases = (
+				D8B128E924CC59EE00A5F9AC /* Sources */,
+				D8B128EA24CC59EE00A5F9AC /* Frameworks */,
+				D8B128EB24CC59EE00A5F9AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ToynbeeUtilities;
+			productName = ToynbeeUtilities;
+			productReference = D8B128ED24CC59EE00A5F9AC /* ToynbeeUtilities.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D82469C124C85241009B735C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					D82469C824C85241009B735C = {
+						CreatedOnToolsVersion = 12.0;
+					};
+					D82469D924C85242009B735C = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = D82469C824C85241009B735C;
+					};
+					D82469E424C85242009B735C = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = D82469C824C85241009B735C;
+					};
+					D8B128EC24CC59EE00A5F9AC = {
+						CreatedOnToolsVersion = 12.0;
+					};
+				};
+			};
+			buildConfigurationList = D82469C424C85241009B735C /* Build configuration list for PBXProject "Toynbee" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D82469C024C85241009B735C;
+			productRefGroup = D82469CA24C85241009B735C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D82469C824C85241009B735C /* Toynbee */,
+				D82469D924C85242009B735C /* ToynbeeTests */,
+				D82469E424C85242009B735C /* ToynbeeUITests */,
+				D8B128EC24CC59EE00A5F9AC /* ToynbeeUtilities */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D82469C724C85241009B735C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D82469D424C85242009B735C /* Preview Assets.xcassets in Resources */,
+				D82469D124C85242009B735C /* Assets.xcassets in Resources */,
+				D8B128E824CC588400A5F9AC /* StopsByID.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D82469D824C85242009B735C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D82469E324C85242009B735C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8B128EB24CC59EE00A5F9AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8B128F724CC59F000A5F9AC /* Preview Assets.xcassets in Resources */,
+				D8B128FD24CC5A0200A5F9AC /* google_rail in Resources */,
+				D8B128F424CC59F000A5F9AC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D82469C524C85241009B735C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D81F652A24CB0134007BA92B /* TripJSON.swift in Sources */,
+				D82469CF24C85241009B735C /* TripListView.swift in Sources */,
+				D8A572F724C9AB0300809FCE /* API.swift in Sources */,
+				D867ED3E24CEDE4400A5B0A1 /* StopListView.swift in Sources */,
+				D8A572FB24C9C19700809FCE /* Trip.swift in Sources */,
+				D81F652424CAFE8D007BA92B /* TrainView.swift in Sources */,
+				D81F652224CAF86B007BA92B /* TripView.swift in Sources */,
+				D8A572FD24C9C3FE00809FCE /* Lookup.swift in Sources */,
+				D82469CD24C85241009B735C /* ToynbeeApp.swift in Sources */,
+				D8B128FF24CC5F6200A5F9AC /* RideView.swift in Sources */,
+				D8B1290124CC866C00A5F9AC /* View+Extensions.swift in Sources */,
+				D89BAB8124CC44AF008ED0D1 /* Stop.swift in Sources */,
+				D8B128E424CC4F0C00A5F9AC /* StopSelectionView.swift in Sources */,
+				D8B128E624CC4FAA00A5F9AC /* ToynbeeView.swift in Sources */,
+				D81F652824CB0057007BA92B /* ExpectedTime.swift in Sources */,
+				D81F652624CAFFF6007BA92B /* Train.swift in Sources */,
+				D8A572F924C9BE5D00809FCE /* ToynbeeModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D82469D624C85242009B735C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D82469DF24C85242009B735C /* ToynbeeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D82469E124C85242009B735C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D82469EA24C85242009B735C /* ToynbeeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8B128E924CC59EE00A5F9AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8B128F224CC59EE00A5F9AC /* ContentView.swift in Sources */,
+				D8B128F024CC59EE00A5F9AC /* ToynbeeUtilitiesApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D82469DC24C85242009B735C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D82469C824C85241009B735C /* Toynbee */;
+			targetProxy = D82469DB24C85242009B735C /* PBXContainerItemProxy */;
+		};
+		D82469E724C85242009B735C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D82469C824C85241009B735C /* Toynbee */;
+			targetProxy = D82469E624C85242009B735C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D82469EC24C85242009B735C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D82469ED24C85242009B735C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D82469EF24C85242009B735C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Toynbee/Preview Content\"";
+				DEVELOPMENT_TEAM = NOPE;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Toynbee/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.Toynbee;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D82469F024C85242009B735C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Toynbee/Preview Content\"";
+				DEVELOPMENT_TEAM = NOPE;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Toynbee/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.Toynbee;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D82469F224C85242009B735C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NOPE;
+				INFOPLIST_FILE = ToynbeeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.ToynbeeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Toynbee.app/Toynbee";
+			};
+			name = Debug;
+		};
+		D82469F324C85242009B735C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NOPE;
+				INFOPLIST_FILE = ToynbeeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.ToynbeeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Toynbee.app/Toynbee";
+			};
+			name = Release;
+		};
+		D82469F524C85242009B735C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NOPE;
+				INFOPLIST_FILE = ToynbeeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.ToynbeeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Toynbee;
+			};
+			name = Debug;
+		};
+		D82469F624C85242009B735C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NOPE;
+				INFOPLIST_FILE = ToynbeeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.ToynbeeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Toynbee;
+			};
+			name = Release;
+		};
+		D8B128FB24CC59F000A5F9AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ToynbeeUtilities/ToynbeeUtilities.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"ToynbeeUtilities/Preview Content\"";
+				DEVELOPMENT_TEAM = NOPE;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = ToynbeeUtilities/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.ToynbeeUtilities;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D8B128FC24CC59F000A5F9AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ToynbeeUtilities/ToynbeeUtilities.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"ToynbeeUtilities/Preview Content\"";
+				DEVELOPMENT_TEAM = NOPE;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = ToynbeeUtilities/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.ToynbeeUtilities;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D82469C424C85241009B735C /* Build configuration list for PBXProject "Toynbee" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D82469EC24C85242009B735C /* Debug */,
+				D82469ED24C85242009B735C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D82469EE24C85242009B735C /* Build configuration list for PBXNativeTarget "Toynbee" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D82469EF24C85242009B735C /* Debug */,
+				D82469F024C85242009B735C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D82469F124C85242009B735C /* Build configuration list for PBXNativeTarget "ToynbeeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D82469F224C85242009B735C /* Debug */,
+				D82469F324C85242009B735C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D82469F424C85242009B735C /* Build configuration list for PBXNativeTarget "ToynbeeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D82469F524C85242009B735C /* Debug */,
+				D82469F624C85242009B735C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8B128FA24CC59F000A5F9AC /* Build configuration list for PBXNativeTarget "ToynbeeUtilities" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8B128FB24CC59F000A5F9AC /* Debug */,
+				D8B128FC24CC59F000A5F9AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D82469C124C85241009B735C /* Project object */;
+}
