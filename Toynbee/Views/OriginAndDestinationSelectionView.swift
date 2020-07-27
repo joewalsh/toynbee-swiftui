@@ -2,13 +2,14 @@ import SwiftUI
 
 struct OriginAndDestinationSelectionView: View {
     @EnvironmentObject var model: ToynbeeModel
+        
     var body: some View {
         VStack(alignment: .leading) {
             Divider()
             selectionView
-                .collapsed(model.isSelectingStop)
-            stopListView
-                .collapsed(!model.isSelectingStop)
+        }.sheet(isPresented: $model.isSelectingStop) {
+            StopListView()
+                .environmentObject(model)
         }
     }
     
@@ -22,7 +23,5 @@ struct OriginAndDestinationSelectionView: View {
             }
         }
     }
-
     
-    let stopListView: some View = StopListView()
 }

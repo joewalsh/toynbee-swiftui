@@ -5,7 +5,6 @@ struct ToynbeeView: View {
     var body: some View {
         VStack {
             TripListView()
-                .collapsed(model.isSelectingStop)
             OriginAndDestinationSelectionView()
         }
     }
