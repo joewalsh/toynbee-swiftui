@@ -2,7 +2,25 @@ import SwiftUI
 
 struct TripListView: View {
     @EnvironmentObject var model: ToynbeeModel
+    
     var body: some View {
+        VStack {
+            header
+            Divider()
+            ScrollView {
+                LazyVStack {
+                    ForEach(model.trips, id: \.self) { value in
+                        TripView(trip: value)
+                        Divider()
+                    }
+                }
+            }.onAppear {
+                model.fetch()
+            }
+        }
+    }
+    
+    var header: some View {
         HStack {
             if model.isBusy {
                 ProgressView()
@@ -18,20 +36,7 @@ struct TripListView: View {
         }.padding([.leading, .trailing, .top])
             .font(.headline)
             .foregroundColor(.secondary)
-        Divider()
-        ScrollView {
-
-            LazyVStack {
-                ForEach(model.trips, id: \.self) { value in
-                    TripView(trip: value)
-                    Divider()
-                }
-            }
-        }.onAppear {
-            model.fetch()
-        }
     }
-
 }
 
 struct TripListView_Previews: PreviewProvider {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D812F32A24CEF2870066F5D6 /* StopSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D812F32924CEF2870066F5D6 /* StopSelectionView.swift */; };
 		D81F652224CAF86B007BA92B /* TripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81F652124CAF86B007BA92B /* TripView.swift */; };
 		D81F652424CAFE8D007BA92B /* TrainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81F652324CAFE8D007BA92B /* TrainView.swift */; };
 		D81F652624CAFFF6007BA92B /* Train.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81F652524CAFFF6007BA92B /* Train.swift */; };
@@ -24,7 +25,7 @@
 		D8A572F924C9BE5D00809FCE /* ToynbeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A572F824C9BE5D00809FCE /* ToynbeeModel.swift */; };
 		D8A572FB24C9C19700809FCE /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A572FA24C9C19700809FCE /* Trip.swift */; };
 		D8A572FD24C9C3FE00809FCE /* Lookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A572FC24C9C3FE00809FCE /* Lookup.swift */; };
-		D8B128E424CC4F0C00A5F9AC /* StopSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B128E324CC4F0C00A5F9AC /* StopSelectionView.swift */; };
+		D8B128E424CC4F0C00A5F9AC /* OriginAndDestinationSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B128E324CC4F0C00A5F9AC /* OriginAndDestinationSelectionView.swift */; };
 		D8B128E624CC4FAA00A5F9AC /* ToynbeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B128E524CC4FAA00A5F9AC /* ToynbeeView.swift */; };
 		D8B128E824CC588400A5F9AC /* StopsByID.json in Resources */ = {isa = PBXBuildFile; fileRef = D8B128E724CC588400A5F9AC /* StopsByID.json */; };
 		D8B128F024CC59EE00A5F9AC /* ToynbeeUtilitiesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B128EF24CC59EE00A5F9AC /* ToynbeeUtilitiesApp.swift */; };
@@ -54,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D812F32924CEF2870066F5D6 /* StopSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopSelectionView.swift; sourceTree = "<group>"; };
 		D81F652124CAF86B007BA92B /* TripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripView.swift; sourceTree = "<group>"; };
 		D81F652324CAFE8D007BA92B /* TrainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainView.swift; sourceTree = "<group>"; };
 		D81F652524CAFFF6007BA92B /* Train.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Train.swift; sourceTree = "<group>"; };
@@ -78,7 +80,7 @@
 		D8A572F824C9BE5D00809FCE /* ToynbeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToynbeeModel.swift; sourceTree = "<group>"; };
 		D8A572FA24C9C19700809FCE /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		D8A572FC24C9C3FE00809FCE /* Lookup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lookup.swift; sourceTree = "<group>"; };
-		D8B128E324CC4F0C00A5F9AC /* StopSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopSelectionView.swift; sourceTree = "<group>"; };
+		D8B128E324CC4F0C00A5F9AC /* OriginAndDestinationSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginAndDestinationSelectionView.swift; sourceTree = "<group>"; };
 		D8B128E524CC4FAA00A5F9AC /* ToynbeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToynbeeView.swift; sourceTree = "<group>"; };
 		D8B128E724CC588400A5F9AC /* StopsByID.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StopsByID.json; sourceTree = "<group>"; };
 		D8B128ED24CC59EE00A5F9AC /* ToynbeeUtilities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToynbeeUtilities.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -236,7 +238,8 @@
 			isa = PBXGroup;
 			children = (
 				D8B128E524CC4FAA00A5F9AC /* ToynbeeView.swift */,
-				D8B128E324CC4F0C00A5F9AC /* StopSelectionView.swift */,
+				D8B128E324CC4F0C00A5F9AC /* OriginAndDestinationSelectionView.swift */,
+				D812F32924CEF2870066F5D6 /* StopSelectionView.swift */,
 				D867ED3D24CEDE4400A5B0A1 /* StopListView.swift */,
 				D82469CE24C85241009B735C /* TripListView.swift */,
 				D81F652124CAF86B007BA92B /* TripView.swift */,
@@ -415,11 +418,12 @@
 				D81F652424CAFE8D007BA92B /* TrainView.swift in Sources */,
 				D81F652224CAF86B007BA92B /* TripView.swift in Sources */,
 				D8A572FD24C9C3FE00809FCE /* Lookup.swift in Sources */,
+				D812F32A24CEF2870066F5D6 /* StopSelectionView.swift in Sources */,
 				D82469CD24C85241009B735C /* ToynbeeApp.swift in Sources */,
 				D8B128FF24CC5F6200A5F9AC /* RideView.swift in Sources */,
 				D8B1290124CC866C00A5F9AC /* View+Extensions.swift in Sources */,
 				D89BAB8124CC44AF008ED0D1 /* Stop.swift in Sources */,
-				D8B128E424CC4F0C00A5F9AC /* StopSelectionView.swift in Sources */,
+				D8B128E424CC4F0C00A5F9AC /* OriginAndDestinationSelectionView.swift in Sources */,
 				D8B128E624CC4FAA00A5F9AC /* ToynbeeView.swift in Sources */,
 				D81F652824CB0057007BA92B /* ExpectedTime.swift in Sources */,
 				D81F652624CAFFF6007BA92B /* Train.swift in Sources */,

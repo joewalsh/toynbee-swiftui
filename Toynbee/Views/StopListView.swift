@@ -3,20 +3,22 @@ import SwiftUI
 struct StopListView: View {
     @EnvironmentObject var model: ToynbeeModel
     var body: some View {
-        header
-        ScrollView {
-            TextField("Search", text: $model.stopSearchString)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-            LazyVStack {
-                ForEach(model.stops, id: \.self) { stop in
-                    VStack(alignment: .leading) {
-                        Text(stop.name)
-                            .padding()
-                        Divider()
-                    }.onTapGesture {
-                        withStopSelectionSheetAnimation {
-                            model.select(stop: stop)
+        VStack {
+            header
+            ScrollView {
+                TextField("Search", text: $model.stopSearchString)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                LazyVStack {
+                    ForEach(model.stops, id: \.self) { stop in
+                        VStack(alignment: .leading) {
+                            Text(stop.name)
+                                .padding()
+                            Divider()
+                        }.onTapGesture {
+                            withStopSelectionSheetAnimation {
+                                model.select(stop: stop)
+                            }
                         }
                     }
                 }
