@@ -35,6 +35,7 @@
 		D8B128FD24CC5A0200A5F9AC /* google_rail in Resources */ = {isa = PBXBuildFile; fileRef = D89BAB8224CC4572008ED0D1 /* google_rail */; };
 		D8B128FF24CC5F6200A5F9AC /* RideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B128FE24CC5F6200A5F9AC /* RideView.swift */; };
 		D8B1290124CC866C00A5F9AC /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B1290024CC866C00A5F9AC /* View+Extensions.swift */; };
+		D8DBE3FC24CF7D2D00F621A6 /* StopListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DBE3FB24CF7D2D00F621A6 /* StopListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		D8B128F924CC59F000A5F9AC /* ToynbeeUtilities.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ToynbeeUtilities.entitlements; sourceTree = "<group>"; };
 		D8B128FE24CC5F6200A5F9AC /* RideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideView.swift; sourceTree = "<group>"; };
 		D8B1290024CC866C00A5F9AC /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		D8DBE3FB24CF7D2D00F621A6 /* StopListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +243,7 @@
 				D8B128E324CC4F0C00A5F9AC /* OriginAndDestinationSelectionView.swift */,
 				D812F32924CEF2870066F5D6 /* StopSelectionView.swift */,
 				D867ED3D24CEDE4400A5B0A1 /* StopListView.swift */,
+				D8DBE3FB24CF7D2D00F621A6 /* StopListTableViewController.swift */,
 				D82469CE24C85241009B735C /* TripListView.swift */,
 				D81F652124CAF86B007BA92B /* TripView.swift */,
 				D81F652324CAFE8D007BA92B /* TrainView.swift */,
@@ -421,6 +424,7 @@
 				D812F32A24CEF2870066F5D6 /* StopSelectionView.swift in Sources */,
 				D82469CD24C85241009B735C /* ToynbeeApp.swift in Sources */,
 				D8B128FF24CC5F6200A5F9AC /* RideView.swift in Sources */,
+				D8DBE3FC24CF7D2D00F621A6 /* StopListTableViewController.swift in Sources */,
 				D8B1290124CC866C00A5F9AC /* View+Extensions.swift in Sources */,
 				D89BAB8124CC44AF008ED0D1 /* Stop.swift in Sources */,
 				D8B128E424CC4F0C00A5F9AC /* OriginAndDestinationSelectionView.swift in Sources */,

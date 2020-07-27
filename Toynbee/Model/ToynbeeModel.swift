@@ -31,7 +31,9 @@ class ToynbeeModel: ObservableObject {
     @Published var stopSearchString: String = "" {
         didSet {
             self.stops = Stop.byID.values.lazy.filter({ (stop) -> Bool in
-                return stop.name.starts(with: self.stopSearchString)
+                return stop.name.starts(with: self.stopSearchString) { (char, element) -> Bool in
+                    return char.lowercased() == element.lowercased()
+                }
             }).sorted { $0.name < $1.name }
         }
     }
@@ -122,6 +124,7 @@ extension ToynbeeModel {
     
     func cancelStopSelection() {
         isSelectingStop = false
+        stopSearchString = ""
     }
     
     func select(stop: Stop) {
