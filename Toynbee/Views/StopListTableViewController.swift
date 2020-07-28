@@ -5,17 +5,35 @@ struct StopListTableViewControllerWrapper: UIViewControllerRepresentable {
     @EnvironmentObject var model: ToynbeeModel
         
     func makeUIViewController(context: UIViewControllerRepresentableContext<StopListTableViewControllerWrapper>) -> StopListTableViewController {
-        return StopListTableViewController(model: model)
+        return StopListTableViewController(stops: model.stops) { (searchString) in
+            model.stopSearchString = searchString
+        } onSelection: { (stop) in
+            model.select(stop: stop)
+        } onCancel: {
+            model.cancelStopSelection()
+        }
     }
     
     func updateUIViewController(_ viewController: StopListTableViewController, context: UIViewControllerRepresentableContext<StopListTableViewControllerWrapper>) {
-        viewController.tableView.reloadData()
+        viewController.update(stops: model.stops)
     }
 }
 
 class StopListTableViewController: UITableViewController {
-    init(model: ToynbeeModel) {
-        self.model = model
+    private(set) var stops: [Stop] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    let onSearchStringChange: (String) -> Void
+    let onSelection: (Stop) -> Void
+    let onCancel: () -> Void
+    
+    init(stops: [Stop], onSearchStringChange: @escaping (String) -> Void, onSelection: @escaping (Stop) -> Void, onCancel: @escaping () -> Void) {
+        self.stops = stops
+        self.onSearchStringChange = onSearchStringChange
+        self.onSelection = onSelection
+        self.onCancel = onCancel
         super.init(style: .plain)
     }
     
@@ -23,14 +41,18 @@ class StopListTableViewController: UITableViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    let model: ToynbeeModel
+    func update(stops updatedStops: [Stop]) {
+        guard !updatedStops.difference(from: stops).isEmpty else {
+            return
+        }
+        stops = updatedStops
+    }
     
     static let cellIdentifier = "com.example.cell.stop"
     
     lazy var searchBar: UISearchBar = {
         let sb = UISearchBar(frame: CGRect(x: 0, y: 0, width: 100, height: 44))
         sb.delegate = self
-        sb.text = model.stopSearchString
         return sb
     }()
     
@@ -50,23 +72,23 @@ class StopListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model.stops.count
+        return stops.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: StopListTableViewController.cellIdentifier, for: indexPath)
-        let stop = model.stops[indexPath.item]
+        let stop = stops[indexPath.item]
         cell.textLabel?.text = stop.name
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        model.select(stop: model.stops[indexPath.item])
+        onSelection(stops[indexPath.item])
     }
 }
 
 extension StopListTableViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        model.stopSearchString = searchText
+        onSearchStringChange(searchText)
     }
 }
