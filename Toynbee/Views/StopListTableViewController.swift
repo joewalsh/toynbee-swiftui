@@ -3,19 +3,25 @@ import SwiftUI
 
 struct StopListTableViewControllerWrapper: UIViewControllerRepresentable {
     @EnvironmentObject var model: ToynbeeModel
+    let title: String
         
-    func makeUIViewController(context: UIViewControllerRepresentableContext<StopListTableViewControllerWrapper>) -> StopListTableViewController {
-        return StopListTableViewController(stops: model.stops) { (searchString) in
+    func makeUIViewController(context: UIViewControllerRepresentableContext<StopListTableViewControllerWrapper>) -> UINavigationController {
+        let stopListTableViewController = StopListTableViewController(stops: model.stops) { (searchString) in
             model.stopSearchString = searchString
         } onSelection: { (stop) in
             model.select(stop: stop)
         } onCancel: {
             model.cancelStopSelection()
         }
+        stopListTableViewController.title = title
+        return UINavigationController(rootViewController: stopListTableViewController)
     }
     
-    func updateUIViewController(_ viewController: StopListTableViewController, context: UIViewControllerRepresentableContext<StopListTableViewControllerWrapper>) {
-        viewController.update(stops: model.stops)
+    func updateUIViewController(_ viewController: UINavigationController, context: UIViewControllerRepresentableContext<StopListTableViewControllerWrapper>) {
+        guard let stopListVC = viewController.viewControllers.first as? StopListTableViewController else {
+            return
+        }
+        stopListVC.update(stops: model.stops)
     }
 }
 
@@ -50,21 +56,24 @@ class StopListTableViewController: UITableViewController {
     
     static let cellIdentifier = "com.example.cell.stop"
     
-    lazy var searchBar: UISearchBar = {
-        let sb = UISearchBar(frame: CGRect(x: 0, y: 0, width: 100, height: 44))
-        sb.delegate = self
-        return sb
+    lazy var searchController: UISearchController = {
+        let sc = UISearchController(searchResultsController: nil)
+        sc.searchResultsUpdater = self
+        return sc
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.tableHeaderView = searchBar
+        navigationItem.searchController = searchController
+        let cancelButton = UIBarButtonItem(image: UIImage(named: "xmark"), style: .plain, target: self, action: #selector(cancel))
+        cancelButton.accessibilityLabel = NSLocalizedString("Cancel", comment: "Cancel")
+        navigationItem.rightBarButtonItem = cancelButton
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: StopListTableViewController.cellIdentifier)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        searchBar.becomeFirstResponder()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        searchController.becomeFirstResponder()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -85,10 +94,14 @@ class StopListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         onSelection(stops[indexPath.item])
     }
+    
+    @objc func cancel() {
+        onCancel()
+    }
 }
 
-extension StopListTableViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        onSearchStringChange(searchText)
+extension StopListTableViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        onSearchStringChange(searchController.searchBar.text ?? "")
     }
 }

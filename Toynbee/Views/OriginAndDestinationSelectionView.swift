@@ -8,7 +8,7 @@ struct OriginAndDestinationSelectionView: View {
             Divider()
             selectionView
         }.sheet(isPresented: $model.isSelectingStop) {
-            StopListView()
+            StopListTableViewControllerWrapper(title: model.stopSelectionState == .origin ? "Select Departure" : "Select Arrival")
                 .environmentObject(model)
         }
     }

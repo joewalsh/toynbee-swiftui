@@ -5,9 +5,7 @@ struct StopSelectionView: View {
     let label: String
     let action: () -> Void
     var body: some View {
-        Button(action: {
-            withStopSelectionSheetAnimation(action)
-        }) {
+        Button(action: action) {
             Text(label)
                 .font(.headline)
             Text(stop.name)
