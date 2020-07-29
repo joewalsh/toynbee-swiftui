@@ -19,6 +19,7 @@
 		D82469D424C85242009B735C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D82469D324C85242009B735C /* Preview Assets.xcassets */; };
 		D82469DF24C85242009B735C /* ToynbeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82469DE24C85242009B735C /* ToynbeeTests.swift */; };
 		D82469EA24C85242009B735C /* ToynbeeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82469E924C85242009B735C /* ToynbeeUITests.swift */; };
+		D89A25B924D183FE00926121 /* StopListTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89A25B824D183FE00926121 /* StopListTableViewDataSource.swift */; };
 		D89BAB8124CC44AF008ED0D1 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89BAB8024CC44AF008ED0D1 /* Stop.swift */; };
 		D8A572F724C9AB0300809FCE /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A572F624C9AB0300809FCE /* API.swift */; };
 		D8A572F924C9BE5D00809FCE /* ToynbeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A572F824C9BE5D00809FCE /* ToynbeeModel.swift */; };
@@ -73,6 +74,7 @@
 		D82469E524C85242009B735C /* ToynbeeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToynbeeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D82469E924C85242009B735C /* ToynbeeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToynbeeUITests.swift; sourceTree = "<group>"; };
 		D82469EB24C85242009B735C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D89A25B824D183FE00926121 /* StopListTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopListTableViewDataSource.swift; sourceTree = "<group>"; };
 		D89BAB8024CC44AF008ED0D1 /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
 		D89BAB8224CC4572008ED0D1 /* google_rail */ = {isa = PBXFileReference; lastKnownFileType = folder; path = google_rail; sourceTree = "<group>"; };
 		D8A572F624C9AB0300809FCE /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				D8B128E324CC4F0C00A5F9AC /* OriginAndDestinationSelectionView.swift */,
 				D812F32924CEF2870066F5D6 /* StopSelectionView.swift */,
 				D8DBE3FB24CF7D2D00F621A6 /* StopListTableViewController.swift */,
+				D89A25B824D183FE00926121 /* StopListTableViewDataSource.swift */,
 				D82469CE24C85241009B735C /* TripListView.swift */,
 				D81F652124CAF86B007BA92B /* TripView.swift */,
 				D81F652324CAFE8D007BA92B /* TrainView.swift */,
@@ -410,6 +413,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D89A25B924D183FE00926121 /* StopListTableViewDataSource.swift in Sources */,
 				D81F652A24CB0134007BA92B /* TripJSON.swift in Sources */,
 				D82469CF24C85241009B735C /* TripListView.swift in Sources */,
 				D8A572F724C9AB0300809FCE /* API.swift in Sources */,

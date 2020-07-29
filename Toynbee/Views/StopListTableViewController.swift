@@ -6,9 +6,7 @@ struct StopListTableViewControllerWrapper: UIViewControllerRepresentable {
     let title: String
         
     func makeUIViewController(context: UIViewControllerRepresentableContext<StopListTableViewControllerWrapper>) -> UINavigationController {
-        let stopListTableViewController = StopListTableViewController(stops: model.stops) { (searchString) in
-            model.stopSearchString = searchString
-        } onSelection: { (stop) in
+        let stopListTableViewController = StopListTableViewController(stops: model.stops) { (stop) in
             model.select(stop: stop)
         } onCancel: {
             model.cancelStopSelection()
@@ -18,43 +16,26 @@ struct StopListTableViewControllerWrapper: UIViewControllerRepresentable {
     }
     
     func updateUIViewController(_ viewController: UINavigationController, context: UIViewControllerRepresentableContext<StopListTableViewControllerWrapper>) {
-        guard let stopListVC = viewController.viewControllers.first as? StopListTableViewController else {
-            return
-        }
-        stopListVC.update(stops: model.stops)
+
     }
 }
 
 class StopListTableViewController: UITableViewController {
-    private(set) var stops: [Stop] {
-        didSet {
-            tableView.reloadData()
-        }
-    }
-    let onSearchStringChange: (String) -> Void
     let onSelection: (Stop) -> Void
     let onCancel: () -> Void
+    var dataSource: StopListTableViewDataSource!
     
-    init(stops: [Stop], onSearchStringChange: @escaping (String) -> Void, onSelection: @escaping (Stop) -> Void, onCancel: @escaping () -> Void) {
-        self.stops = stops
-        self.onSearchStringChange = onSearchStringChange
+    init(stops: [Stop], onSelection: @escaping (Stop) -> Void, onCancel: @escaping () -> Void) {
         self.onSelection = onSelection
         self.onCancel = onCancel
         super.init(style: .plain)
+        self.dataSource = StopListTableViewDataSource(stops: stops, tableView: tableView)
+
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    func update(stops updatedStops: [Stop]) {
-        guard !updatedStops.difference(from: stops).isEmpty else {
-            return
-        }
-        stops = updatedStops
-    }
-    
-    static let cellIdentifier = "com.example.cell.stop"
     
     lazy var searchController: UISearchController = {
         let sc = UISearchController(searchResultsController: nil)
@@ -68,7 +49,6 @@ class StopListTableViewController: UITableViewController {
         let cancelButton = UIBarButtonItem(image: UIImage(named: "xmark"), style: .plain, target: self, action: #selector(cancel))
         cancelButton.accessibilityLabel = NSLocalizedString("Cancel", comment: "Cancel")
         navigationItem.rightBarButtonItem = cancelButton
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: StopListTableViewController.cellIdentifier)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -76,23 +56,8 @@ class StopListTableViewController: UITableViewController {
         searchController.becomeFirstResponder()
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return stops.count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: StopListTableViewController.cellIdentifier, for: indexPath)
-        let stop = stops[indexPath.item]
-        cell.textLabel?.text = stop.name
-        return cell
-    }
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        onSelection(stops[indexPath.item])
+        onSelection(dataSource.stops[indexPath.item])
     }
     
     @objc func cancel() {
@@ -102,6 +67,6 @@ class StopListTableViewController: UITableViewController {
 
 extension StopListTableViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        onSearchStringChange(searchController.searchBar.text ?? "")
+        dataSource.performSearch(with: searchController.searchBar.text)
     }
 }

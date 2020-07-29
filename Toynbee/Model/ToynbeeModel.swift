@@ -28,31 +28,15 @@ class ToynbeeModel: ObservableObject {
         }
     }
     
-    @Published var stopSearchString: String = "" {
-        didSet {
-            self.stops = Stop.byID.values.lazy.filter({ (stop) -> Bool in
-                return stop.name.starts(with: self.stopSearchString) { (char, element) -> Bool in
-                    return char.lowercased() == element.lowercased()
-                }
-            }).sorted { $0.name < $1.name }
-        }
-    }
-    
     enum StopSelectionState {
         case origin
         case destination
     }
     
     @Published var isSelectingStop: Bool = false
-    @Published private(set) var stopSelectionState: StopSelectionState = .origin {
-        didSet {
-            if stopSelectionState == .none {
-                stopSearchString = ""
-            }
-        }
-    }
+    @Published private(set) var stopSelectionState: StopSelectionState = .origin
     
-    @Published private(set) var stops: [Stop] = Stop.byID.values.sorted { $0.name < $1.name }
+    public let stops: [Stop] = Stop.byID.values.sorted { $0.name < $1.name }
     
     @Published private(set) var isBusy: Bool = false
 
@@ -124,7 +108,6 @@ extension ToynbeeModel {
     
     func cancelStopSelection() {
         isSelectingStop = false
-        stopSearchString = ""
     }
     
     func select(stop: Stop) {
