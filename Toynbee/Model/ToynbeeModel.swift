@@ -22,6 +22,8 @@ class ToynbeeModel: ObservableObject {
         }
     }
     
+    @Published private(set) var favoriteStops: [Stop] = [Stop.byID[90004]!, Stop.byID[90005]!, Stop.byID[90006]!]
+    
     @Published private(set) var trips: [Trip] = [] {
         didSet {
             isBusy = false
@@ -37,6 +39,7 @@ class ToynbeeModel: ObservableObject {
     @Published private(set) var stopSelectionState: StopSelectionState = .origin
     
     public let stops: [Stop] = Stop.byID.values.sorted { $0.name < $1.name }
+    
     
     @Published private(set) var isBusy: Bool = false
 
@@ -56,7 +59,7 @@ class ToynbeeModel: ObservableObject {
     func save() {
         do {
             let peristenceFileURL = try getPersistenceFileURL()
-            let persistence = ToynbeeModelPersistence(originID: origin.id, destinationID: destination.id)
+            let persistence = ToynbeeModelPersistence(originID: origin.id, destinationID: destination.id, favoriteStopIDs: favoriteStops.map { $0.id })
             let data = try JSONEncoder().encode(persistence)
             try data.write(to: peristenceFileURL)
         } catch let error {
@@ -75,6 +78,7 @@ class ToynbeeModel: ObservableObject {
             if let persistedDestination = Stop.byID[persistence.destinationID] {
                 destination = persistedDestination
             }
+            favoriteStops = persistence.favoriteStopIDs.compactMap { Stop.byID[$0] }
         } catch let error {
             print("error saving: \(error)")
         }
@@ -84,6 +88,7 @@ class ToynbeeModel: ObservableObject {
 struct ToynbeeModelPersistence: Codable {
     let originID: Int
     let destinationID: Int
+    let favoriteStopIDs: [Int]
 }
 
 // MARK: Mutators
@@ -93,9 +98,12 @@ extension ToynbeeModel {
             currentRequest.cancel()
         }
         isBusy = true
-        cancelable = api.getTrips(from: origin, to: destination).replaceError(with: []).receive(on: DispatchQueue.main).assign(to: \.trips, on: self)
+        cancelable = api.getTrips(from: origin, to: destination)
+            .replaceError(with: [])
+            .receive(on: DispatchQueue.main)
+            .assign(to: \.trips, on: self)
     }
-    
+
     func selectOrigin() {
         stopSelectionState = .origin
         isSelectingStop = true
@@ -121,5 +129,12 @@ extension ToynbeeModel {
         DispatchQueue.global(qos: .background).async {
             self.save()
         }
+    }
+    
+    func addFavorite(stop: Stop) {
+        guard !favoriteStops.contains(stop) else {
+            return
+        }
+        favoriteStops.append(stop)
     }
 }
