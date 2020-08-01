@@ -32,3 +32,12 @@ struct TripView: View {
     }
    
 }
+
+struct TripView_Previews: PreviewProvider {
+    static var previews: some View {
+        TripView(trip: Trip.fixtures[0])
+            .background(Color(.systemBackground))
+            .environment(\.colorScheme, .dark)
+        TripView(trip: Trip.fixtures[1])
+    }
+}
