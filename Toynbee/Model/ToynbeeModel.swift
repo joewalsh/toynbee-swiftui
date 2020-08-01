@@ -10,19 +10,19 @@ class ToynbeeModel: ObservableObject {
         load()
     }
     
-    @Published private(set) var origin: Stop = Stop.villanova {
+    @Published private(set) var origin: Stop = Stop.byID[90514]! {
         didSet {
             fetch()
         }
     }
     
-    @Published private(set) var destination: Stop = Stop.airportTerminalA {
+    @Published private(set) var destination: Stop = Stop.byID[90404]! {
         didSet {
             fetch()
         }
     }
     
-    @Published private(set) var favoriteStops: [Stop] = [Stop.thirteithStreetStation, Stop.suburbanStation, Stop.jeffersonStation]
+    @Published private(set) var favoriteStops: [Stop] = [Stop.byID[90004]!, Stop.byID[90005]!, Stop.byID[90006]!]
     
     @Published private(set) var trips: [Trip] = [] {
         didSet {
@@ -38,13 +38,15 @@ class ToynbeeModel: ObservableObject {
     @Published var isSelectingStop: Bool = false
     @Published private(set) var stopSelectionState: StopSelectionState = .origin
     
-    public let stops: [Stop] = Stop.allCases
+    public let stops: [Stop] = Stop.byID.values.sorted { $0.name < $1.name }
+    
     
     @Published private(set) var isBusy: Bool = false
 
     private let api = API()
     private var cancelable: AnyCancellable?
-
+    
+    
     func getPersistenceFileURL() throws -> URL {
         guard let documentsDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             throw ToynbeeModelError.generic
@@ -57,7 +59,7 @@ class ToynbeeModel: ObservableObject {
     func save() {
         do {
             let peristenceFileURL = try getPersistenceFileURL()
-            let persistence = ToynbeeModelPersistence(origin: origin, destination: destination, favoriteStops: favoriteStops)
+            let persistence = ToynbeeModelPersistence(originID: origin.id, destinationID: destination.id, favoriteStopIDs: favoriteStops.map { $0.id })
             let data = try JSONEncoder().encode(persistence)
             try data.write(to: peristenceFileURL)
         } catch let error {
@@ -70,9 +72,13 @@ class ToynbeeModel: ObservableObject {
             let peristenceFileURL = try getPersistenceFileURL()
             let data = try Data(contentsOf: peristenceFileURL)
             let persistence = try JSONDecoder().decode(ToynbeeModelPersistence.self, from: data)
-            origin = persistence.origin
-            destination = persistence.destination
-            favoriteStops = persistence.favoriteStops
+            if let persistedOrigin = Stop.byID[persistence.originID] {
+                origin = persistedOrigin
+            }
+            if let persistedDestination = Stop.byID[persistence.destinationID] {
+                destination = persistedDestination
+            }
+            favoriteStops = persistence.favoriteStopIDs.compactMap { Stop.byID[$0] }
         } catch let error {
             print("error saving: \(error)")
         }
@@ -80,9 +86,9 @@ class ToynbeeModel: ObservableObject {
 }
 
 struct ToynbeeModelPersistence: Codable {
-    let origin: Stop
-    let destination: Stop
-    let favoriteStops: [Stop]
+    let originID: Int
+    let destinationID: Int
+    let favoriteStopIDs: [Int]
 }
 
 // MARK: Mutators

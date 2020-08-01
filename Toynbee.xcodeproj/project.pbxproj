@@ -19,9 +19,6 @@
 		D82469D424C85242009B735C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D82469D324C85242009B735C /* Preview Assets.xcassets */; };
 		D82469DF24C85242009B735C /* ToynbeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82469DE24C85242009B735C /* ToynbeeTests.swift */; };
 		D82469EA24C85242009B735C /* ToynbeeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82469E924C85242009B735C /* ToynbeeUITests.swift */; };
-		D840679C24D59875007EB34C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D840679B24D59875007EB34C /* main.swift */; };
-		D84067A024D598C9007EB34C /* Lookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A572FC24C9C3FE00809FCE /* Lookup.swift */; };
-		D84067A224D59A03007EB34C /* StopCSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84067A124D59A03007EB34C /* StopCSV.swift */; };
 		D875382D24D4999A00C792C1 /* Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D875382A24D4903D00C792C1 /* Fixtures.swift */; };
 		D89A25B924D183FE00926121 /* StopListTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89A25B824D183FE00926121 /* StopListTableViewDataSource.swift */; };
 		D89BAB8124CC44AF008ED0D1 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89BAB8024CC44AF008ED0D1 /* Stop.swift */; };
@@ -53,18 +50,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		D840679724D59875007EB34C /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		D812F32924CEF2870066F5D6 /* StopSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopSelectionView.swift; sourceTree = "<group>"; };
 		D81F652124CAF86B007BA92B /* TripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripView.swift; sourceTree = "<group>"; };
@@ -84,12 +69,10 @@
 		D82469E524C85242009B735C /* ToynbeeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToynbeeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D82469E924C85242009B735C /* ToynbeeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToynbeeUITests.swift; sourceTree = "<group>"; };
 		D82469EB24C85242009B735C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D840679924D59875007EB34C /* ToynbeeUtilities */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ToynbeeUtilities; sourceTree = BUILT_PRODUCTS_DIR; };
-		D840679B24D59875007EB34C /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		D84067A124D59A03007EB34C /* StopCSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopCSV.swift; sourceTree = "<group>"; };
 		D875382A24D4903D00C792C1 /* Fixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixtures.swift; sourceTree = "<group>"; };
 		D89A25B824D183FE00926121 /* StopListTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopListTableViewDataSource.swift; sourceTree = "<group>"; };
 		D89BAB8024CC44AF008ED0D1 /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
+		D89BAB8224CC4572008ED0D1 /* google_rail */ = {isa = PBXFileReference; lastKnownFileType = folder; path = google_rail; sourceTree = "<group>"; };
 		D8A572F624C9AB0300809FCE /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		D8A572F824C9BE5D00809FCE /* ToynbeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToynbeeModel.swift; sourceTree = "<group>"; };
 		D8A572FA24C9C19700809FCE /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
@@ -123,13 +106,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D840679624D59875007EB34C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -139,7 +115,7 @@
 				D82469CB24C85241009B735C /* Toynbee */,
 				D82469DD24C85242009B735C /* ToynbeeTests */,
 				D82469E824C85242009B735C /* ToynbeeUITests */,
-				D840679A24D59875007EB34C /* ToynbeeUtilities */,
+				D89BAB8224CC4572008ED0D1 /* google_rail */,
 				D82469CA24C85241009B735C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -150,7 +126,6 @@
 				D82469C924C85241009B735C /* Toynbee.app */,
 				D82469DA24C85242009B735C /* ToynbeeTests.xctest */,
 				D82469E524C85242009B735C /* ToynbeeUITests.xctest */,
-				D840679924D59875007EB34C /* ToynbeeUtilities */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -193,15 +168,6 @@
 				D82469EB24C85242009B735C /* Info.plist */,
 			);
 			path = ToynbeeUITests;
-			sourceTree = "<group>";
-		};
-		D840679A24D59875007EB34C /* ToynbeeUtilities */ = {
-			isa = PBXGroup;
-			children = (
-				D840679B24D59875007EB34C /* main.swift */,
-				D84067A124D59A03007EB34C /* StopCSV.swift */,
-			);
-			path = ToynbeeUtilities;
 			sourceTree = "<group>";
 		};
 		D8B1290224CC95D600A5F9AC /* Model */ = {
@@ -300,23 +266,6 @@
 			productReference = D82469E524C85242009B735C /* ToynbeeUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		D840679824D59875007EB34C /* ToynbeeUtilities */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D840679D24D59875007EB34C /* Build configuration list for PBXNativeTarget "ToynbeeUtilities" */;
-			buildPhases = (
-				D840679524D59875007EB34C /* Sources */,
-				D840679624D59875007EB34C /* Frameworks */,
-				D840679724D59875007EB34C /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ToynbeeUtilities;
-			productName = ToynbeeUtilities;
-			productReference = D840679924D59875007EB34C /* ToynbeeUtilities */;
-			productType = "com.apple.product-type.tool";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -337,9 +286,6 @@
 						CreatedOnToolsVersion = 12.0;
 						TestTargetID = D82469C824C85241009B735C;
 					};
-					D840679824D59875007EB34C = {
-						CreatedOnToolsVersion = 12.0;
-					};
 				};
 			};
 			buildConfigurationList = D82469C424C85241009B735C /* Build configuration list for PBXProject "Toynbee" */;
@@ -358,7 +304,6 @@
 				D82469C824C85241009B735C /* Toynbee */,
 				D82469D924C85242009B735C /* ToynbeeTests */,
 				D82469E424C85242009B735C /* ToynbeeUITests */,
-				D840679824D59875007EB34C /* ToynbeeUtilities */,
 			);
 		};
 /* End PBXProject section */
@@ -430,16 +375,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D82469EA24C85242009B735C /* ToynbeeUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D840679524D59875007EB34C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D840679C24D59875007EB34C /* main.swift in Sources */,
-				D84067A024D598C9007EB34C /* Lookup.swift in Sources */,
-				D84067A224D59A03007EB34C /* StopCSV.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -703,32 +638,6 @@
 			};
 			name = Release;
 		};
-		D840679E24D59875007EB34C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FUCRE8Q386;
-				ENABLE_HARDENED_RUNTIME = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		D840679F24D59875007EB34C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FUCRE8Q386;
-				ENABLE_HARDENED_RUNTIME = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -764,15 +673,6 @@
 			buildConfigurations = (
 				D82469F524C85242009B735C /* Debug */,
 				D82469F624C85242009B735C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D840679D24D59875007EB34C /* Build configuration list for PBXNativeTarget "ToynbeeUtilities" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D840679E24D59875007EB34C /* Debug */,
-				D840679F24D59875007EB34C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
