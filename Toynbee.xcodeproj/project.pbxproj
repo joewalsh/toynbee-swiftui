@@ -25,7 +25,6 @@
 		D8A572F724C9AB0300809FCE /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A572F624C9AB0300809FCE /* API.swift */; };
 		D8A572F924C9BE5D00809FCE /* ToynbeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A572F824C9BE5D00809FCE /* ToynbeeModel.swift */; };
 		D8A572FB24C9C19700809FCE /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A572FA24C9C19700809FCE /* Trip.swift */; };
-		D8A572FD24C9C3FE00809FCE /* Lookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A572FC24C9C3FE00809FCE /* Lookup.swift */; };
 		D8B128E424CC4F0C00A5F9AC /* OriginAndDestinationSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B128E324CC4F0C00A5F9AC /* OriginAndDestinationSelectionView.swift */; };
 		D8B128E624CC4FAA00A5F9AC /* ToynbeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B128E524CC4FAA00A5F9AC /* ToynbeeView.swift */; };
 		D8B128E824CC588400A5F9AC /* StopsByID.json in Resources */ = {isa = PBXBuildFile; fileRef = D8B128E724CC588400A5F9AC /* StopsByID.json */; };
@@ -37,6 +36,8 @@
 		D8B128FF24CC5F6200A5F9AC /* RideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B128FE24CC5F6200A5F9AC /* RideView.swift */; };
 		D8B1290124CC866C00A5F9AC /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B1290024CC866C00A5F9AC /* View+Extensions.swift */; };
 		D8DBE3FC24CF7D2D00F621A6 /* StopListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DBE3FB24CF7D2D00F621A6 /* StopListTableViewController.swift */; };
+		D8E56E2A24D5DC7C004181BF /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E56E2924D5DC7C004181BF /* Line.swift */; };
+		D8E56E2C24D5DD2E004181BF /* Lookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A572FC24C9C3FE00809FCE /* Lookup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		D8B128FE24CC5F6200A5F9AC /* RideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideView.swift; sourceTree = "<group>"; };
 		D8B1290024CC866C00A5F9AC /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		D8DBE3FB24CF7D2D00F621A6 /* StopListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopListTableViewController.swift; sourceTree = "<group>"; };
+		D8E56E2924D5DC7C004181BF /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 		D8B128EE24CC59EE00A5F9AC /* ToynbeeUtilities */ = {
 			isa = PBXGroup;
 			children = (
+				D8A572FC24C9C3FE00809FCE /* Lookup.swift */,
 				D89BAB8224CC4572008ED0D1 /* google_rail */,
 				D8B128EF24CC59EE00A5F9AC /* ToynbeeUtilitiesApp.swift */,
 				D8B128F124CC59EE00A5F9AC /* ContentView.swift */,
@@ -219,12 +222,12 @@
 			children = (
 				D8A572F824C9BE5D00809FCE /* ToynbeeModel.swift */,
 				D8A572F624C9AB0300809FCE /* API.swift */,
-				D8A572FC24C9C3FE00809FCE /* Lookup.swift */,
 				D875382A24D4903D00C792C1 /* Fixtures.swift */,
 				D89BAB8024CC44AF008ED0D1 /* Stop.swift */,
 				D8A572FA24C9C19700809FCE /* Trip.swift */,
 				D81F652924CB0134007BA92B /* TripJSON.swift */,
 				D81F652524CAFFF6007BA92B /* Train.swift */,
+				D8E56E2924D5DC7C004181BF /* Line.swift */,
 				D81F652724CB0057007BA92B /* ExpectedTime.swift */,
 				D8B128E724CC588400A5F9AC /* StopsByID.json */,
 			);
@@ -424,10 +427,10 @@
 				D8A572FB24C9C19700809FCE /* Trip.swift in Sources */,
 				D81F652424CAFE8D007BA92B /* TrainView.swift in Sources */,
 				D81F652224CAF86B007BA92B /* TripView.swift in Sources */,
-				D8A572FD24C9C3FE00809FCE /* Lookup.swift in Sources */,
 				D812F32A24CEF2870066F5D6 /* StopSelectionView.swift in Sources */,
 				D82469CD24C85241009B735C /* ToynbeeApp.swift in Sources */,
 				D8B128FF24CC5F6200A5F9AC /* RideView.swift in Sources */,
+				D8E56E2A24D5DC7C004181BF /* Line.swift in Sources */,
 				D8DBE3FC24CF7D2D00F621A6 /* StopListTableViewController.swift in Sources */,
 				D8B1290124CC866C00A5F9AC /* View+Extensions.swift in Sources */,
 				D89BAB8124CC44AF008ED0D1 /* Stop.swift in Sources */,
@@ -459,6 +462,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8E56E2C24D5DD2E004181BF /* Lookup.swift in Sources */,
 				D8B128F224CC59EE00A5F9AC /* ContentView.swift in Sources */,
 				D8B128F024CC59EE00A5F9AC /* ToynbeeUtilitiesApp.swift in Sources */,
 			);
