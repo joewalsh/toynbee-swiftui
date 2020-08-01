@@ -28,6 +28,12 @@
 		D8A572FD24C9C3FE00809FCE /* Lookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A572FC24C9C3FE00809FCE /* Lookup.swift */; };
 		D8B128E424CC4F0C00A5F9AC /* OriginAndDestinationSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B128E324CC4F0C00A5F9AC /* OriginAndDestinationSelectionView.swift */; };
 		D8B128E624CC4FAA00A5F9AC /* ToynbeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B128E524CC4FAA00A5F9AC /* ToynbeeView.swift */; };
+		D8B128E824CC588400A5F9AC /* StopsByID.json in Resources */ = {isa = PBXBuildFile; fileRef = D8B128E724CC588400A5F9AC /* StopsByID.json */; };
+		D8B128F024CC59EE00A5F9AC /* ToynbeeUtilitiesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B128EF24CC59EE00A5F9AC /* ToynbeeUtilitiesApp.swift */; };
+		D8B128F224CC59EE00A5F9AC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B128F124CC59EE00A5F9AC /* ContentView.swift */; };
+		D8B128F424CC59F000A5F9AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8B128F324CC59F000A5F9AC /* Assets.xcassets */; };
+		D8B128F724CC59F000A5F9AC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8B128F624CC59F000A5F9AC /* Preview Assets.xcassets */; };
+		D8B128FD24CC5A0200A5F9AC /* google_rail in Resources */ = {isa = PBXBuildFile; fileRef = D89BAB8224CC4572008ED0D1 /* google_rail */; };
 		D8B128FF24CC5F6200A5F9AC /* RideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B128FE24CC5F6200A5F9AC /* RideView.swift */; };
 		D8B1290124CC866C00A5F9AC /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B1290024CC866C00A5F9AC /* View+Extensions.swift */; };
 		D8DBE3FC24CF7D2D00F621A6 /* StopListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DBE3FB24CF7D2D00F621A6 /* StopListTableViewController.swift */; };
@@ -79,6 +85,14 @@
 		D8A572FC24C9C3FE00809FCE /* Lookup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lookup.swift; sourceTree = "<group>"; };
 		D8B128E324CC4F0C00A5F9AC /* OriginAndDestinationSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginAndDestinationSelectionView.swift; sourceTree = "<group>"; };
 		D8B128E524CC4FAA00A5F9AC /* ToynbeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToynbeeView.swift; sourceTree = "<group>"; };
+		D8B128E724CC588400A5F9AC /* StopsByID.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StopsByID.json; sourceTree = "<group>"; };
+		D8B128ED24CC59EE00A5F9AC /* ToynbeeUtilities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToynbeeUtilities.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8B128EF24CC59EE00A5F9AC /* ToynbeeUtilitiesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToynbeeUtilitiesApp.swift; sourceTree = "<group>"; };
+		D8B128F124CC59EE00A5F9AC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D8B128F324CC59F000A5F9AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D8B128F624CC59F000A5F9AC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D8B128F824CC59F000A5F9AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8B128F924CC59F000A5F9AC /* ToynbeeUtilities.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ToynbeeUtilities.entitlements; sourceTree = "<group>"; };
 		D8B128FE24CC5F6200A5F9AC /* RideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideView.swift; sourceTree = "<group>"; };
 		D8B1290024CC866C00A5F9AC /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		D8DBE3FB24CF7D2D00F621A6 /* StopListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopListTableViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +120,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D8B128EA24CC59EE00A5F9AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -115,7 +136,7 @@
 				D82469CB24C85241009B735C /* Toynbee */,
 				D82469DD24C85242009B735C /* ToynbeeTests */,
 				D82469E824C85242009B735C /* ToynbeeUITests */,
-				D89BAB8224CC4572008ED0D1 /* google_rail */,
+				D8B128EE24CC59EE00A5F9AC /* ToynbeeUtilities */,
 				D82469CA24C85241009B735C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -126,6 +147,7 @@
 				D82469C924C85241009B735C /* Toynbee.app */,
 				D82469DA24C85242009B735C /* ToynbeeTests.xctest */,
 				D82469E524C85242009B735C /* ToynbeeUITests.xctest */,
+				D8B128ED24CC59EE00A5F9AC /* ToynbeeUtilities.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -170,6 +192,28 @@
 			path = ToynbeeUITests;
 			sourceTree = "<group>";
 		};
+		D8B128EE24CC59EE00A5F9AC /* ToynbeeUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				D89BAB8224CC4572008ED0D1 /* google_rail */,
+				D8B128EF24CC59EE00A5F9AC /* ToynbeeUtilitiesApp.swift */,
+				D8B128F124CC59EE00A5F9AC /* ContentView.swift */,
+				D8B128F324CC59F000A5F9AC /* Assets.xcassets */,
+				D8B128F824CC59F000A5F9AC /* Info.plist */,
+				D8B128F924CC59F000A5F9AC /* ToynbeeUtilities.entitlements */,
+				D8B128F524CC59F000A5F9AC /* Preview Content */,
+			);
+			path = ToynbeeUtilities;
+			sourceTree = "<group>";
+		};
+		D8B128F524CC59F000A5F9AC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D8B128F624CC59F000A5F9AC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		D8B1290224CC95D600A5F9AC /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +226,7 @@
 				D81F652924CB0134007BA92B /* TripJSON.swift */,
 				D81F652524CAFFF6007BA92B /* Train.swift */,
 				D81F652724CB0057007BA92B /* ExpectedTime.swift */,
+				D8B128E724CC588400A5F9AC /* StopsByID.json */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -266,6 +311,23 @@
 			productReference = D82469E524C85242009B735C /* ToynbeeUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		D8B128EC24CC59EE00A5F9AC /* ToynbeeUtilities */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8B128FA24CC59F000A5F9AC /* Build configuration list for PBXNativeTarget "ToynbeeUtilities" */;
+			buildPhases = (
+				D8B128E924CC59EE00A5F9AC /* Sources */,
+				D8B128EA24CC59EE00A5F9AC /* Frameworks */,
+				D8B128EB24CC59EE00A5F9AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ToynbeeUtilities;
+			productName = ToynbeeUtilities;
+			productReference = D8B128ED24CC59EE00A5F9AC /* ToynbeeUtilities.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -286,6 +348,9 @@
 						CreatedOnToolsVersion = 12.0;
 						TestTargetID = D82469C824C85241009B735C;
 					};
+					D8B128EC24CC59EE00A5F9AC = {
+						CreatedOnToolsVersion = 12.0;
+					};
 				};
 			};
 			buildConfigurationList = D82469C424C85241009B735C /* Build configuration list for PBXProject "Toynbee" */;
@@ -304,6 +369,7 @@
 				D82469C824C85241009B735C /* Toynbee */,
 				D82469D924C85242009B735C /* ToynbeeTests */,
 				D82469E424C85242009B735C /* ToynbeeUITests */,
+				D8B128EC24CC59EE00A5F9AC /* ToynbeeUtilities */,
 			);
 		};
 /* End PBXProject section */
@@ -315,6 +381,7 @@
 			files = (
 				D82469D424C85242009B735C /* Preview Assets.xcassets in Resources */,
 				D82469D124C85242009B735C /* Assets.xcassets in Resources */,
+				D8B128E824CC588400A5F9AC /* StopsByID.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +396,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8B128EB24CC59EE00A5F9AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8B128F724CC59F000A5F9AC /* Preview Assets.xcassets in Resources */,
+				D8B128FD24CC5A0200A5F9AC /* google_rail in Resources */,
+				D8B128F424CC59F000A5F9AC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +452,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D82469EA24C85242009B735C /* ToynbeeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8B128E924CC59EE00A5F9AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8B128F224CC59EE00A5F9AC /* ContentView.swift in Sources */,
+				D8B128F024CC59EE00A5F9AC /* ToynbeeUtilitiesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -638,6 +724,56 @@
 			};
 			name = Release;
 		};
+		D8B128FB24CC59F000A5F9AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ToynbeeUtilities/ToynbeeUtilities.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"ToynbeeUtilities/Preview Content\"";
+				DEVELOPMENT_TEAM = NOPE;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = ToynbeeUtilities/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.ToynbeeUtilities;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D8B128FC24CC59F000A5F9AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ToynbeeUtilities/ToynbeeUtilities.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"ToynbeeUtilities/Preview Content\"";
+				DEVELOPMENT_TEAM = NOPE;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = ToynbeeUtilities/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.ToynbeeUtilities;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -673,6 +809,15 @@
 			buildConfigurations = (
 				D82469F524C85242009B735C /* Debug */,
 				D82469F624C85242009B735C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8B128FA24CC59F000A5F9AC /* Build configuration list for PBXNativeTarget "ToynbeeUtilities" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8B128FB24CC59F000A5F9AC /* Debug */,
+				D8B128FC24CC59F000A5F9AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
