@@ -9,7 +9,7 @@ struct RideView: View {
                 Text("↓")
                     .foregroundColor(.secondary)
                     .font(.caption2)
-                Text(connection.stop.name.uppercased())
+                Text(connection.name.uppercased())
                     .foregroundColor(.secondary)
                 Text("↓")
                     .foregroundColor(.secondary)

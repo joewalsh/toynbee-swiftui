@@ -14,12 +14,12 @@ struct Trip: Hashable {
     
     struct Connection {
         let train: Train
-        let stop: Stop
+        let name: String
     }
     let connection: Connection?
 
     init?(json: TripJSON, context: ExpectedTime.Context) {
-        guard let train = Train(id: json.orig_train, departure: json.orig_departure_time, arrival: json.orig_arrival_time, delay: json.orig_delay, lineName: json.orig_line, context: context) else {
+        guard let train = Train(id: json.orig_train, departure: json.orig_departure_time, arrival: json.orig_arrival_time, delay: json.orig_delay, line: json.orig_line, context: context) else {
             return nil
         }
         self.train = train
@@ -27,10 +27,9 @@ struct Trip: Hashable {
            let termDepart = json.term_depart_time,
            let termArrive = json.term_arrival_time,
            let connectionStopName = json.Connection,
-           let connectionStop = Stop.with(name: connectionStopName),
            let connectionLine = json.term_line,
-           let connectingTrain = Train(id: termTrain, departure: termDepart, arrival: termArrive, delay: json.term_delay, lineName: connectionLine, context: context) {
-            connection = Connection(train: connectingTrain, stop: connectionStop)
+           let connectingTrain = Train(id: termTrain, departure: termDepart, arrival: termArrive, delay: json.term_delay, line: connectionLine, context: context) {
+            connection = Connection(train: connectingTrain, name: connectionStopName)
         } else {
             connection = nil
         }
