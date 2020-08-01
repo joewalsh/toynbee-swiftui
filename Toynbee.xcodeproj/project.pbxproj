@@ -20,7 +20,6 @@
 		D82469DF24C85242009B735C /* ToynbeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82469DE24C85242009B735C /* ToynbeeTests.swift */; };
 		D82469EA24C85242009B735C /* ToynbeeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82469E924C85242009B735C /* ToynbeeUITests.swift */; };
 		D840679C24D59875007EB34C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D840679B24D59875007EB34C /* main.swift */; };
-		D84067A024D598C9007EB34C /* Lookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A572FC24C9C3FE00809FCE /* Lookup.swift */; };
 		D84067A224D59A03007EB34C /* StopCSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84067A124D59A03007EB34C /* StopCSV.swift */; };
 		D875382D24D4999A00C792C1 /* Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D875382A24D4903D00C792C1 /* Fixtures.swift */; };
 		D89A25B924D183FE00926121 /* StopListTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89A25B824D183FE00926121 /* StopListTableViewDataSource.swift */; };
@@ -28,12 +27,12 @@
 		D8A572F724C9AB0300809FCE /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A572F624C9AB0300809FCE /* API.swift */; };
 		D8A572F924C9BE5D00809FCE /* ToynbeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A572F824C9BE5D00809FCE /* ToynbeeModel.swift */; };
 		D8A572FB24C9C19700809FCE /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A572FA24C9C19700809FCE /* Trip.swift */; };
-		D8A572FD24C9C3FE00809FCE /* Lookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A572FC24C9C3FE00809FCE /* Lookup.swift */; };
 		D8B128E424CC4F0C00A5F9AC /* OriginAndDestinationSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B128E324CC4F0C00A5F9AC /* OriginAndDestinationSelectionView.swift */; };
 		D8B128E624CC4FAA00A5F9AC /* ToynbeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B128E524CC4FAA00A5F9AC /* ToynbeeView.swift */; };
 		D8B128FF24CC5F6200A5F9AC /* RideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B128FE24CC5F6200A5F9AC /* RideView.swift */; };
 		D8B1290124CC866C00A5F9AC /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B1290024CC866C00A5F9AC /* View+Extensions.swift */; };
 		D8DBE3FC24CF7D2D00F621A6 /* StopListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DBE3FB24CF7D2D00F621A6 /* StopListTableViewController.swift */; };
+		D8E56E2824D5CF8E004181BF /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E56E2724D5CF8E004181BF /* Line.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,12 +92,12 @@
 		D8A572F624C9AB0300809FCE /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		D8A572F824C9BE5D00809FCE /* ToynbeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToynbeeModel.swift; sourceTree = "<group>"; };
 		D8A572FA24C9C19700809FCE /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
-		D8A572FC24C9C3FE00809FCE /* Lookup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lookup.swift; sourceTree = "<group>"; };
 		D8B128E324CC4F0C00A5F9AC /* OriginAndDestinationSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginAndDestinationSelectionView.swift; sourceTree = "<group>"; };
 		D8B128E524CC4FAA00A5F9AC /* ToynbeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToynbeeView.swift; sourceTree = "<group>"; };
 		D8B128FE24CC5F6200A5F9AC /* RideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideView.swift; sourceTree = "<group>"; };
 		D8B1290024CC866C00A5F9AC /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		D8DBE3FB24CF7D2D00F621A6 /* StopListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopListTableViewController.swift; sourceTree = "<group>"; };
+		D8E56E2724D5CF8E004181BF /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,12 +208,12 @@
 			children = (
 				D8A572F824C9BE5D00809FCE /* ToynbeeModel.swift */,
 				D8A572F624C9AB0300809FCE /* API.swift */,
-				D8A572FC24C9C3FE00809FCE /* Lookup.swift */,
 				D875382A24D4903D00C792C1 /* Fixtures.swift */,
 				D89BAB8024CC44AF008ED0D1 /* Stop.swift */,
 				D8A572FA24C9C19700809FCE /* Trip.swift */,
 				D81F652924CB0134007BA92B /* TripJSON.swift */,
 				D81F652524CAFFF6007BA92B /* Train.swift */,
+				D8E56E2724D5CF8E004181BF /* Line.swift */,
 				D81F652724CB0057007BA92B /* ExpectedTime.swift */,
 			);
 			path = Model;
@@ -402,8 +401,8 @@
 				D8A572FB24C9C19700809FCE /* Trip.swift in Sources */,
 				D81F652424CAFE8D007BA92B /* TrainView.swift in Sources */,
 				D81F652224CAF86B007BA92B /* TripView.swift in Sources */,
-				D8A572FD24C9C3FE00809FCE /* Lookup.swift in Sources */,
 				D812F32A24CEF2870066F5D6 /* StopSelectionView.swift in Sources */,
+				D8E56E2824D5CF8E004181BF /* Line.swift in Sources */,
 				D82469CD24C85241009B735C /* ToynbeeApp.swift in Sources */,
 				D8B128FF24CC5F6200A5F9AC /* RideView.swift in Sources */,
 				D8DBE3FC24CF7D2D00F621A6 /* StopListTableViewController.swift in Sources */,
@@ -438,7 +437,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D840679C24D59875007EB34C /* main.swift in Sources */,
-				D84067A024D598C9007EB34C /* Lookup.swift in Sources */,
 				D84067A224D59A03007EB34C /* StopCSV.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
