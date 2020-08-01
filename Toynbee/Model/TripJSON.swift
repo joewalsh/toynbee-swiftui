@@ -1,4 +1,4 @@
-/// API response JSON structure
+/// API response JSON structure. Naming conventions are off because they're from the API, we'll translate into our own model structs.
 struct TripJSON: Codable {
     let orig_train: String
     let orig_line: String

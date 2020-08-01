@@ -27,15 +27,12 @@ class API {
             subject.send(completion: .failure(APIError.generic))
             return subject.eraseToAnyPublisher()
         }
-        let baseDate = Date()
-        let calendar = Calendar.autoupdatingCurrent
-        let timeZone = TimeZone.autoupdatingCurrent
-        let components = calendar.dateComponents(in: timeZone, from: baseDate)
         let nextToArriveURL = baseURL.appendingPathComponent(origin.param).appendingPathComponent(destination.param).appendingPathComponent("100")
+        let context = ExpectedTime.Context()
         return make(URLRequest(url: nextToArriveURL))
             .map({ (response: Response<[TripJSON]>) -> [Trip] in
                 response.value.compactMap {
-                    Trip(json: $0, calendar: calendar, baseDate: baseDate, baseComponents: components, baseTimeZone: timeZone)
+                    Trip(json: $0, context: context)
                 }
             })
             .eraseToAnyPublisher()

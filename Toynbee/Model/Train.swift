@@ -14,11 +14,12 @@ struct Train {
     let departure: ExpectedTime
     let arrival: ExpectedTime
     let id: String
-    init?(id: String, departure: String, arrival: String, delay delayString: String?, line: String, calendar: Calendar, baseDate: Date, baseComponents: DateComponents, baseTimeZone: TimeZone) {
-        guard let depart = ExpectedTime(time: departure, delay: delayString, calendar: calendar, baseDate: baseDate, baseComponents: baseComponents, baseTimeZone: baseTimeZone) else {
+    
+    init?(id: String, departure: String, arrival: String, delay delayString: String?, line: String, context: ExpectedTime.Context) {
+        guard let depart = ExpectedTime(time: departure, delay: delayString, context: context) else {
             return nil
         }
-        guard let arrive = ExpectedTime(time: arrival, delay: delayString, calendar: calendar, baseDate: baseDate, baseComponents: baseComponents, baseTimeZone: baseTimeZone) else {
+        guard let arrive = ExpectedTime(time: arrival, delay: delayString, context: context) else {
             return nil
         }
         self.departure = depart

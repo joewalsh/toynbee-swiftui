@@ -1,7 +1,7 @@
 import Foundation
 import Combine
 
-class Trip: ObservableObject, Hashable, Identifiable {
+struct Trip: Hashable {
     static func == (lhs: Trip, rhs: Trip) -> Bool {
         return lhs.train.departure.date == rhs.train.departure.date
     }
@@ -10,7 +10,7 @@ class Trip: ObservableObject, Hashable, Identifiable {
         hasher.combine(train.departure.date)
     }
     
-    @Published var train: Train
+    let train: Train
     
     struct Connection {
         let train: Train
@@ -18,8 +18,8 @@ class Trip: ObservableObject, Hashable, Identifiable {
     }
     let connection: Connection?
 
-    init?(json: TripJSON, calendar: Calendar, baseDate: Date, baseComponents: DateComponents, baseTimeZone: TimeZone) {
-        guard let train = Train(id: json.orig_train, departure: json.orig_departure_time, arrival: json.orig_arrival_time, delay: json.orig_delay, line: json.orig_line, calendar: calendar, baseDate: baseDate, baseComponents: baseComponents, baseTimeZone: baseTimeZone) else {
+    init?(json: TripJSON, context: ExpectedTime.Context) {
+        guard let train = Train(id: json.orig_train, departure: json.orig_departure_time, arrival: json.orig_arrival_time, delay: json.orig_delay, line: json.orig_line, context: context) else {
             return nil
         }
         self.train = train
@@ -28,7 +28,7 @@ class Trip: ObservableObject, Hashable, Identifiable {
            let termArrive = json.term_arrival_time,
            let connectionStopName = json.Connection,
            let connectionLine = json.term_line,
-           let connectingTrain = Train(id: termTrain, departure: termDepart, arrival: termArrive, delay: json.term_delay, line: connectionLine, calendar: calendar, baseDate: baseDate, baseComponents: baseComponents, baseTimeZone: baseTimeZone) {
+           let connectingTrain = Train(id: termTrain, departure: termDepart, arrival: termArrive, delay: json.term_delay, line: connectionLine, context: context) {
             connection = Connection(train: connectingTrain, name: connectionStopName)
         } else {
             connection = nil

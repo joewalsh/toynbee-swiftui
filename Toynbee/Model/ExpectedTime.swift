@@ -4,8 +4,23 @@ import Foundation
 struct ExpectedTime: Codable {
     let delay: DateComponents
     let date: Date
-    // Parsing of string times returned by the API - we
-    init?(time: String, delay delayString: String?, calendar: Calendar, baseDate: Date, baseComponents: DateComponents, baseTimeZone: TimeZone) {
+    
+    /// Contextual information necessary for converting a relative time string from the API to am ExpectedTime
+    struct Context {
+        let calendar: Calendar
+        let date: Date
+        let components: DateComponents
+        let timeZone: TimeZone
+        init() {
+            date = Date()
+            timeZone = TimeZone.autoupdatingCurrent
+            calendar = Calendar.autoupdatingCurrent
+            components = calendar.dateComponents(in: timeZone, from: date)
+        }
+    }
+    
+    /// Parsing of terrible string times returned by the API
+    init?(time: String, delay delayString: String?, context: Context) {
         var trimmedTime = time.lowercased()
         let isPM = trimmedTime.contains("pm")
         trimmedTime = time.trimmingCharacters(in: .nonDigits)
@@ -21,8 +36,8 @@ struct ExpectedTime: Codable {
             hour = 0
         }
         
-        var mutableComponents = baseComponents
-        var mutableDate = baseDate
+        var mutableComponents = context.components
+        var mutableDate = context.date
         guard let currentHour = mutableComponents.hour else {
             return nil
         }
@@ -34,14 +49,15 @@ struct ExpectedTime: Codable {
         let adjustedHour = hour + ((minutes + Int(delay.minute ?? 0)) / 60)
         if adjustedHour < currentHour {
             mutableDate = mutableDate.addingTimeInterval(86400)
-            mutableComponents = calendar.dateComponents(in: baseTimeZone, from: mutableDate)
+            mutableComponents = context.calendar.dateComponents(in: context.timeZone, from: mutableDate)
         }
         mutableComponents.hour = hour
         mutableComponents.minute = minutes
         mutableComponents.second = 0
-        date = calendar.date(from: mutableComponents)!
+        date = context.calendar.date(from: mutableComponents)!
     }
 }
+
 
 fileprivate extension CharacterSet {
     static let nonDigits: CharacterSet = CharacterSet.decimalDigits.inverted
