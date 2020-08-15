@@ -1,9 +1,11 @@
 import Foundation
 
+#if DEBUG
+
 extension ToynbeeModel {
     static let fixture: ToynbeeModel = ToynbeeModel(initialTripFetchState: .success(Trip.fixtures))
-    static let errorFixture: ToynbeeModel = ToynbeeModel(initialTripFetchState:  .failure(ToynbeeModelError.generic))
-    static let emptyFixture: ToynbeeModel = ToynbeeModel(initialTripFetchState:  .empty)
+    static let errorFixture: ToynbeeModel = ToynbeeModel(initialTripFetchState: .failure(ToynbeeModelError.generic))
+    static let emptyFixture: ToynbeeModel = ToynbeeModel(initialTripFetchState: .empty)
 }
 
 extension Trip {
@@ -18,4 +20,4 @@ extension Trip {
     }()
 }
 
-
+#endif
