@@ -41,5 +41,8 @@ struct ToynbeeView_Previews: PreviewProvider {
         ToynbeeView().environmentObject(ToynbeeModel.fixture)
         ToynbeeView().environmentObject(ToynbeeModel.errorFixture)
         ToynbeeView().environmentObject(ToynbeeModel.emptyFixture)
+        ToynbeeView().environmentObject(ToynbeeModel.fixture)
+            .background(Color(.systemBackground))
+            .environment(\.colorScheme, .dark)
     }
 }
