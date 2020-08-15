@@ -4,21 +4,33 @@ struct ToynbeeView: View {
     @EnvironmentObject var model: ToynbeeModel
     var body: some View {
         VStack {
-            switch model.tripFetchState {
-            case .fetching(let trips):
-                StatusHeaderView(state: .busy)
-                TripListView(trips: trips)
-            case .empty:
-                StatusHeaderView(state: .empty(message: "No Trips Found"))
-                TripListView(trips: [])
-            case .failure(let error):
-                StatusHeaderView(state: .error(message: error.localizedDescription))
-                TripListView(trips: [])
-            case .success(let trips):
-                StatusHeaderView(state: .success(headers: [Header(text: "Depart", id: 0), Header(text: "Ride", id: 1), Header(text: "Arrive", id: 2)]))
-                TripListView(trips: trips)
-            }
+            StatusHeaderView(state: headerState)
+            TripListView(trips: trips)
             OriginAndDestinationSelectionView()
+        }
+    }
+    
+    var headerState: StatusHeaderView.State {
+        switch model.tripFetchState {
+        case .fetching:
+            return .busy
+        case .empty:
+            return .empty(message: "No Trips Found")
+        case .failure(let error):
+            return .error(message: error.localizedDescription)
+        case .success:
+            return .success(headers: [Header(text: "Depart", id: 0), Header(text: "Ride", id: 1), Header(text: "Arrive", id: 2)])
+        }
+    }
+    
+    var trips: [Trip] {
+        switch model.tripFetchState {
+        case .fetching(let trips):
+            fallthrough
+        case .success(let trips):
+            return trips
+        default:
+            return []
         }
     }
 }

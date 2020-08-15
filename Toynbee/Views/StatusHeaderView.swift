@@ -4,6 +4,7 @@ struct Header: Identifiable {
     let text: String
     let id: Int
 }
+
 struct StatusHeaderView: View {
     enum State {
         case busy
@@ -11,7 +12,7 @@ struct StatusHeaderView: View {
         case error(message: String)
         case success(headers: [Header])
     }
-    var state: State
+    let state: State
     
     var body: some View {
         HStack {
@@ -23,14 +24,16 @@ struct StatusHeaderView: View {
             case .empty(let message):
                 Text(message)
             case .success(let headers):
+                let lastID = headers.last?.id
                 ForEach(headers) { header in
                     Text(header.text)
-                    if header.id != headers.last?.id {
+                    if header.id != lastID {
                         Spacer()
                     }
                 }
             }
-        }.padding([.leading, .trailing, .top])
+        }
+        .padding([.leading, .trailing, .top])
         .font(.headline)
         .foregroundColor(.secondary)
     }

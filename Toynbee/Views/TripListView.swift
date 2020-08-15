@@ -1,8 +1,7 @@
 import SwiftUI
 
 struct TripListView: View {
-    var trips: [Trip]
-    
+    let trips: [Trip]
     var body: some View {
         ScrollView {
             LazyVStack {
