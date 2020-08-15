@@ -13,6 +13,7 @@
 		D81F652624CAFFF6007BA92B /* Train.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81F652524CAFFF6007BA92B /* Train.swift */; };
 		D81F652824CB0057007BA92B /* ExpectedTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81F652724CB0057007BA92B /* ExpectedTime.swift */; };
 		D81F652A24CB0134007BA92B /* TripJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81F652924CB0134007BA92B /* TripJSON.swift */; };
+		D823A63024E81837000FB268 /* StatusHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D823A62F24E81837000FB268 /* StatusHeaderView.swift */; };
 		D82469CD24C85241009B735C /* ToynbeeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82469CC24C85241009B735C /* ToynbeeApp.swift */; };
 		D82469CF24C85241009B735C /* TripListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82469CE24C85241009B735C /* TripListView.swift */; };
 		D82469D124C85242009B735C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D82469D024C85242009B735C /* Assets.xcassets */; };
@@ -64,6 +65,7 @@
 		D81F652524CAFFF6007BA92B /* Train.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Train.swift; sourceTree = "<group>"; };
 		D81F652724CB0057007BA92B /* ExpectedTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpectedTime.swift; sourceTree = "<group>"; };
 		D81F652924CB0134007BA92B /* TripJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripJSON.swift; sourceTree = "<group>"; };
+		D823A62F24E81837000FB268 /* StatusHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusHeaderView.swift; sourceTree = "<group>"; };
 		D82469C924C85241009B735C /* Toynbee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Toynbee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D82469CC24C85241009B735C /* ToynbeeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToynbeeApp.swift; sourceTree = "<group>"; };
 		D82469CE24C85241009B735C /* TripListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListView.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 				D8DBE3FB24CF7D2D00F621A6 /* StopListTableViewController.swift */,
 				D89A25B824D183FE00926121 /* StopListTableViewDataSource.swift */,
 				D82469CE24C85241009B735C /* TripListView.swift */,
+				D823A62F24E81837000FB268 /* StatusHeaderView.swift */,
 				D81F652124CAF86B007BA92B /* TripView.swift */,
 				D81F652324CAFE8D007BA92B /* TrainView.swift */,
 				D8B128FE24CC5F6200A5F9AC /* RideView.swift */,
@@ -435,6 +438,7 @@
 				D8B1290124CC866C00A5F9AC /* View+Extensions.swift in Sources */,
 				D89BAB8124CC44AF008ED0D1 /* Stop.swift in Sources */,
 				D8B128E424CC4F0C00A5F9AC /* OriginAndDestinationSelectionView.swift in Sources */,
+				D823A63024E81837000FB268 /* StatusHeaderView.swift in Sources */,
 				D8B128E624CC4FAA00A5F9AC /* ToynbeeView.swift in Sources */,
 				D81F652824CB0057007BA92B /* ExpectedTime.swift in Sources */,
 				D81F652624CAFFF6007BA92B /* Train.swift in Sources */,

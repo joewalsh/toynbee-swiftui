@@ -1,12 +1,13 @@
 import Foundation
 import Combine
 
-enum ToynbeeModelError: Error {
+enum ToynbeeModelError: Error, LocalizedError {
     case generic
 }
 
 class ToynbeeModel: ObservableObject {
-    init() {
+    init(initialTripFetchState: TripFetchState) {
+        tripFetchState = initialTripFetchState
         load()
     }
     
@@ -24,11 +25,15 @@ class ToynbeeModel: ObservableObject {
     
     @Published private(set) var favoriteStops: [Stop] = [Stop.byID[90004]!, Stop.byID[90005]!, Stop.byID[90006]!]
     
-    @Published private(set) var trips: [Trip] = [] {
-        didSet {
-            isBusy = false
-        }
+
+    enum TripFetchState {
+        case fetching(_ trips: [Trip])
+        case failure(_ error: LocalizedError)
+        case empty
+        case success(_ trips: [Trip])
     }
+    
+    @Published private(set) var tripFetchState: TripFetchState
     
     enum StopSelectionState {
         case origin
@@ -40,12 +45,8 @@ class ToynbeeModel: ObservableObject {
     
     public let stops: [Stop] = Stop.byID.values.sorted { $0.name < $1.name }
     
-    
-    @Published private(set) var isBusy: Bool = false
-
     private let api = API()
     private var cancelable: AnyCancellable?
-    
     
     func getPersistenceFileURL() throws -> URL {
         guard let documentsDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
@@ -97,11 +98,33 @@ extension ToynbeeModel {
         if let currentRequest = cancelable {
             currentRequest.cancel()
         }
-        isBusy = true
+        
+        let fetchingTrips: [Trip]
+        switch tripFetchState {
+        case .success(let trips):
+            fetchingTrips = trips
+        default:
+            fetchingTrips = []
+        }
+        
+        tripFetchState = .fetching(fetchingTrips)
+        
         cancelable = api.getTrips(from: origin, to: destination)
-            .replaceError(with: [])
             .receive(on: DispatchQueue.main)
-            .assign(to: \.trips, on: self)
+            .sink(receiveCompletion: { (result) in
+                switch result {
+                case .failure(let error):
+                    self.tripFetchState = .failure(error as? LocalizedError ?? ToynbeeModelError.generic)
+                case .finished:
+                    break
+                }
+            }, receiveValue: { (value) in
+                if value.isEmpty {
+                    self.tripFetchState = .empty
+                } else {
+                    self.tripFetchState = .success(value)
+                }
+            })
     }
 
     func selectOrigin() {
