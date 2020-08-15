@@ -22,7 +22,7 @@ class API {
     }
     
     func getTrips(from origin: Stop, to destination: Stop) -> AnyPublisher<[Trip], Error> {
-        guard let baseURL = URL(string: "https://www3.septa.org/hackathon/NextToArrive/") else {
+        guard let baseURL = URL(string: "https://www3.septa.org/api/nta/") else {
             let subject = PassthroughSubject<[Trip], Error>()
             subject.send(completion: .failure(APIError.generic))
             return subject.eraseToAnyPublisher()
