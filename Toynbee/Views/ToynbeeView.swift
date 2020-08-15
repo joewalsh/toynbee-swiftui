@@ -19,7 +19,11 @@ struct ToynbeeView: View {
         case .failure(let error):
             return .error(message: error.localizedDescription)
         case .success:
-            return .success(headers: [Header(text: "Depart", id: 0), Header(text: "Ride", id: 1), Header(text: "Arrive", id: 2)])
+            return .success(headers: [
+                                Header(text: "Depart", id: 0),
+                                Header(text: "Ride", id: 1),
+                                Header(text: "Arrive", id: 2)
+            ])
         }
     }
     
